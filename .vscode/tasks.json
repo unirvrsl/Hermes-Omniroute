@@ -1,0 +1,70 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "OmniRoute Gateway",
+      "type": "shell",
+      "command": "pkill -9 -f omniroute 2>/dev/null || true; lsof -ti:20128 | xargs kill -9 2>/dev/null || true; sleep 1; omniroute",
+      "isBackground": true,
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": false
+      }
+    },
+    {
+      "label": "Graphify Watcher",
+      "type": "shell",
+      "command": "pkill -9 -f 'graphify watch' 2>/dev/null || true; sleep 1; python3 -m graphify watch",
+      "isBackground": true,
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": false
+      }
+    },
+    {
+      "label": "Claude Code Agent",
+      "type": "shell",
+      "command": "pkill -9 -x claude 2>/dev/null || true; sleep 1; claude",
+      "isBackground": true,
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Hi Freddie",
+      "dependsOn": [
+        "OmniRoute Gateway",
+        "Graphify Watcher",
+        "Claude Code Agent"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "window.restoreWindows": "all",
+  "terminal.integrated.restoreSessions": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "explorer.decorations.colors": true,
+  "git.decorations.enabled": true,
+  "task.allowAutomaticTasks": "on"
+}
