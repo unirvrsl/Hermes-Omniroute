@@ -15,7 +15,7 @@ When cloning this repository to another workstation or server via Git, run the i
 
 ### 1-Step Setup on Any New Machine
 ```bash
-git clone <your-repo-url> Hermes-Omniroute
+git clone https://github.com/unirvrsl/Hermes-Omniroute.git
 cd Hermes-Omniroute
 ./setup.sh
 ```
