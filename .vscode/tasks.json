@@ -50,11 +50,27 @@
       }
     },
     {
+      "label": "Hermes Agent",
+      "type": "shell",
+      "command": "pkill -9 -f 'hermes chat' 2>/dev/null || true; sleep 1; hermes chat",
+      "isBackground": true,
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": false
+      }
+    },
+    {
       "label": "Hi Freddie",
       "dependsOn": [
         "OmniRoute Gateway",
         "Graphify Watcher",
-        "Claude Code Agent"
+        "Hermes Agent"
       ],
       "dependsOrder": "parallel",
       "problemMatcher": [],
